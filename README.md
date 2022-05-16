@@ -1,10 +1,9 @@
 # Installing @badeball/cypress-cucumber
 
-#To Install
+To Install
 
-- npm i
-- cypress open
-
+- npm install
+- npm run cy:open
 
 # Steps I used to create this project
 
