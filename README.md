@@ -1,6 +1,6 @@
 # Installing @badeball/cypress-cucumber
 
-##To Install
+#To Install
 
 - npm i
 - cypress open
@@ -11,19 +11,19 @@
 See [badeball quickstart doc](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/quick-start.md)
 
 
-###initialize project
+initialize project
 
     npm init 
     
     // take all defaults
 
-###Install badeball/cucumber
+Install badeball/cucumber
 
 From [badeball quick-start guide](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/quick-start.md)
 
     npm install @badeball/cypress-cucumber-preprocessor
 
-###Configure testFiles
+Configure testFiles
 
     Configure testFiles with "**/*.feature", using EG. cypress.json.
 
@@ -32,21 +32,21 @@ From [badeball quick-start guide](https://github.com/badeball/cypress-cucumber-p
     }
 
 
-##Configure your preferred bundler to process features files
+#Configure your preferred bundler to process features files
 
 see [browserify example](https://github.com/badeball/cypress-cucumber-preprocessor/tree/master/examples/browserify)
 
-###Install required modules
+Install required modules
 
     npm i @cypress/browserify-preprocessor
     npm i cypress
     npm i typescript
 
-###Run cypress open to get cypress directory structure
+Run cypress open to get cypress directory structure
 
     cypress open
 
-###Configure plugin in cypress/plugins/index.ts
+Configure plugin in cypress/plugins/index.ts
  
 Rename index.js to index.ts
 
@@ -68,16 +68,16 @@ export default (
 };
 ```
 
-## Put the example test into place
+# Put the example test into place
 
-### Add duckduckgo.feature to cypress/integration folder
+Add duckduckgo.feature to cypress/integration folder
 ```gherkin
 Feature: duckduckgo.com
   Scenario: visting the frontpage
     When I visit duckduckgo.com
     Then I should see a search bar
 ```
-### Add duckduckgo.ts to cypress/integration folder
+Add duckduckgo.ts to cypress/integration folder
 ```typescript
 import { When, Then } from "@badeball/cypress-cucumber-preprocessor";
 
@@ -96,18 +96,18 @@ Then("I should see a search bar", () => {
 });
 ```
 
-##Run the example test
+#Run the example test
 
     cypress open
     click on duckduckgo.feature
 
     ![cypress-open.png](img.png)
 
-###See the test results
+See the test results
 
     ![cypress-test.png](img.png)
 
-### The test ran and everything looks good!
+The test ran and everything looks good!
 
 ---
 Add a couple more examples, so it's not just one test running
@@ -116,7 +116,7 @@ Add a couple more examples, so it's not just one test running
 
 ---
 
-## Add in tsconfig.json to get rid of type errors in cypress/plugins/index.ts
+# Add in tsconfig.json to get rid of type errors in cypress/plugins/index.ts
 see ./tsconfig.json
 
 ```typescript
@@ -137,10 +137,10 @@ see ./tsconfig.json
 }
 ```
 ---
-##Change the location of the step_definitions
+#Change the location of the step_definitions
 See [step-definitions.md](https://github.com/badeball/cypress-cucumber-preprocessor/blob/master/docs/step-definitions.md)
 
-### Move duckduckgo.ts to cypress/support/step_definitions
+Move duckduckgo.ts to cypress/support/step_definitions
 1. Create a `step_definitions` directory under `cypress/support`
 2. Create a `duckduckgo` directory under `cypress/support/step_definitions`
 3. Move `duckduckgo.ts` to `cypress/support/step_definitions`
@@ -149,13 +149,13 @@ See [step-definitions.md](https://github.com/badeball/cypress-cucumber-preproces
 ---
 
 # Add reporting using cypress-allure plugin
-###Install cypress-allure-plugin, multi-reporters and allure-commandline
+Install cypress-allure-plugin, multi-reporters and allure-commandline
 
     npm i @shelex/cypress-allure-plugin
     npm i allure-commandline
     npm i cypress-multi-reporters
 
-###Configure the cypress-allure-plugin in cypress/plugins/index.ts
+Configure the cypress-allure-plugin in cypress/plugins/index.ts
 - change signature to return `Cypress.PluginConfigOptions`
 - add `allureWriter(on, config);` after the preprocessor
 - return config;
@@ -182,7 +182,7 @@ export default (
 };
 ```
 
-###Add import to cypress/support/index.ts
+Add import to cypress/support/index.ts
 
 ```typescript
 import './commands'
@@ -190,7 +190,7 @@ import '@shelex/cypress-allure-plugin';
 
 ```
 
-###Change cypress.json to turn on the allure reporter
+Change cypress.json to turn on the allure reporter
 
 ```typescript
 {
@@ -205,8 +205,11 @@ import '@shelex/cypress-allure-plugin';
 }
 ```
 
-###Getting a runtime failure that stops the test from completing and allure-results from being generated.
-In the browser running the cypress test open the developer window and see this stacktrace in the console.
+Getting a runtime failure that stops the test from completing and allure-results from being generated.
+- In the browser run the cypress test
+- open the developer window 
+- see this stacktrace in the console.
+
 ```javascript
 Uncaught TypeError: The following error originated from your application code, not from Cypress. It was caused by an unhandled promise rejection.
 
