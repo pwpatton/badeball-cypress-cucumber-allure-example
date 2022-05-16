@@ -1,0 +1,10 @@
+{
+  "env": {
+    "allure": true,
+    "allureLogCypress": true,
+    "allureLogGherkin": true,
+    "allureClearSkippedTests": true
+  },
+
+  "testFiles": "**/*.feature"
+}

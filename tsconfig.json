@@ -1,0 +1,15 @@
+{
+  "compilerOptions": {
+    "target": "es2018",
+    "lib": ["es2018", "dom"],
+    "moduleResolution": "Node",
+    "types": [
+      "cypress-cucumber-preprocessor/steps",
+      "cypress",
+      "node"
+    ]
+  },
+  "include": [
+    "**/*.ts"
+  ]
+}
